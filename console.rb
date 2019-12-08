@@ -14,59 +14,72 @@ customer1 = Customer.new({
   'funds' => 100
   })
 
+customer1.save()
+
 customer2 = Customer.new({
   'name' => 'Lauren',
   'funds' => 200
   })
+
+customer2.save()
 
 customer3 = Customer.new({
   'name' => 'Loki',
   'funds' => 300
   })
 
-customer1.save()
-customer2.save()
 customer3.save()
+
 
 film1 = Film.new({
   'title' => 'Saving Private Ryan',
   'price' => 10
   })
 
+film1.save()
+
 film2 = Film.new({
   'title' => 'Nightmare Before Christmas',
   'price' => 10
   })
+
+film2.save()
 
 film3 = Film.new({
     'title' => 'Lassie',
     'price' => 10
     })
 
-film1.save()
-film2.save()
 film3.save()
 
 screening1 = Screening.new({'film_id' => film1.id, 'date' => '01.01.2020', 'time' => '5pm', 'limit' => 50})
-screening2 = Screening.new({'film_id' => film2.id, 'date' => '01.01.2020', 'time' => '8pm', 'limit' => 3})
-screening3 = Screening.new({'film_id' => film3.id, 'date' => '01.01.2020', 'time' => '11pm', 'limit' => 100})
 
 screening1.save()
+
+screening2 = Screening.new({'film_id' => film2.id, 'date' => '01.01.2020', 'time' => '8pm', 'limit' => 3})
+
 screening2.save()
+
+screening3 = Screening.new({'film_id' => film3.id, 'date' => '01.01.2020', 'time' => '11pm', 'limit' => 100})
+
 screening3.save()
 
 ticket1 = Ticket.new({'customer_id' => customer1.id, 'screening_id' => screening1.id})
-ticket2 = Ticket.new({'customer_id' => customer1.id, 'screening_id' => screening2.id})
-ticket3 = Ticket.new({'customer_id' => customer2.id, 'screening_id' => screening2.id})
-ticket4 = Ticket.new({'customer_id' => customer2.id, 'screening_id' => screening1.id})
-ticket5 = Ticket.new({'customer_id' => customer3.id, 'screening_id' => screening3.id})
-ticket6 = Ticket.new({'customer_id' => customer3.id, 'screening_id' => screening1.id})
-
 ticket1.save()
+
+ticket2 = Ticket.new({'customer_id' => customer1.id, 'screening_id' => screening2.id})
 ticket2.save()
+
+ticket3 = Ticket.new({'customer_id' => customer2.id, 'screening_id' => screening2.id})
 ticket3.save()
+
+ticket4 = Ticket.new({'customer_id' => customer2.id, 'screening_id' => screening1.id})
 ticket4.save()
+
+ticket5 = Ticket.new({'customer_id' => customer3.id, 'screening_id' => screening3.id})
 ticket5.save()
+
+ticket6 = Ticket.new({'customer_id' => customer3.id, 'screening_id' => screening1.id})
 ticket6.save()
 
 film1.title = "Avengers: Infinity War"
