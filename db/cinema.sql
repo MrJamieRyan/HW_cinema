@@ -7,13 +7,13 @@ DROP TABLE films;
 CREATE TABLE customers (
 id SERIAL PRIMARY KEY,
 name VARCHAR(255),
-funds INT4
+funds INT
 );
 
 CREATE TABLE films (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
-  price INT4
+  price INT
 );
 
 CREATE TABLE screenings (
@@ -21,7 +21,7 @@ CREATE TABLE screenings (
   film_id INT REFERENCES films(id) ON DELETE CASCADE,
   date VARCHAR(255),
   time VARCHAR(255),
-  max_cap INT4
+  limit INT
 );
 
 CREATE TABLE tickets (
